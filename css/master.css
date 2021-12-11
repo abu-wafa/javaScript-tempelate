@@ -1,0 +1,111 @@
+:root{
+    --logo-color: #F72585;
+    --links-color:#4CC9F0;
+    --span-color:#4cc9f0;
+     /*under line*/   
+    --bg-color: #4cc9f0;
+    --underline: #b5179e;
+    --space: 6rem;
+}
+
+body{
+    font-family: 'Montserrat',sans-serif;
+}
+/* > landing */
+.landin-page{
+    background-image: url(../img/background/1.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
+
+.landin-page .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+.landin-page .header{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    padding: 15px;
+}
+.landin-page .header .logo{
+    font-weight: bold;
+    width: 300px;
+    padding: 15px;
+    color:var(--logo-color);
+}
+.landin-page .header .links{
+    width: 100%;
+    list-style: none;
+    text-align: right;
+    padding-left:0 ;
+    padding-right:20px;
+    font-size: 15px;
+}
+
+.landin-page .header .links li{
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.landin-page .header .links a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #F0F5FC;
+    transition: .3s;
+}
+.landin-page .header .links a:hover,
+.landin-page .header .links a.active{
+    color: var(--links-color);
+}
+
+
+.landin-page .intro-text{
+    position: absolute;
+    text-align: center;
+    width: 65%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.landin-page .intro-text h1{
+    color: white;
+    width: 42%;
+    padding-bottom:5px;
+    margin: auto;
+    margin-bottom: 40px;
+    background-image: linear-gradient(90deg, var(--bg-color), var(--bg-color)),
+    linear-gradient(90deg, var(--underline), var(--underline));
+    background-size: var(--space) .3rem,100% .3rem;
+    background-repeat: no-repeat;
+    background-position-x: calc(var(--space) * -1),0%;
+    background-position-y: 105%;
+    transition: 1s cubic-bezier(0.25, 0.86, 0.4, 0.96);
+}
+
+.landin-page .intro-text h1:hover{
+    background-position-x: calc(100% + var(--space)),0%;
+
+}
+.landin-page .intro-text h1 span{
+    color: var(--span-color);
+}
+
+
+
+.landin-page .intro-text p{
+    color:white;
+    line-height: 1.8;
+    font-size: 20px;
+   
+
+}
+
+/* < landing */
