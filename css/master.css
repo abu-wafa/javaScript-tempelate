@@ -1,5 +1,5 @@
 :root {
-  --logo-color: #f72585;
+  --main-color: #f72585;
   --links-color: #4cc9f0;
   /*under line*/
   --bg-color: #4cc9f0;
@@ -12,13 +12,14 @@ body {
 }
 
 /* > setting bar */
+
 .setting-bar {
   position: fixed;
   width: 200px;
   left: -200px;
   top: 0;
   min-height: 100vh;
-  background-color: white;
+  background-color: rgb(19, 18, 18);
   z-index: 999;
   transition: 0.3s;
 }
@@ -34,11 +35,45 @@ body {
   border-radius: 0 0 10px 0px;
   color: white;
 }
-.setting-bar .setting-container {
-}
 .show {
   left: 0;
 }
+.setting-bar .setting-container {
+  padding: 40px;
+}
+.setting-bar .color-box h2 {
+  color: var(--underline);
+  margin: 0;
+  font-weight: bold;
+}
+.setting-bar .color-box ul {
+  list-style: none;
+  padding: 0;
+}
+.setting-bar .color-box ul li {
+  margin: 5px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  opacity: 0.5;
+  display: inline-block;
+  cursor: pointer;
+}
+.setting-bar .color-box ul li.active {
+  opacity: 1;
+}
+
+.setting-bar .color-box ul :first-child {
+  background-color: #4cc9f0;
+}
+.setting-bar .color-box ul :nth-child(2) {
+  background-color: #f72585;
+}
+.setting-bar .color-box ul :nth-child(3) {
+  background-color: red;
+}
+
 /* < setting bar */
 
 /* > landing */
@@ -69,7 +104,7 @@ body {
   font-weight: bold;
   width: 300px;
   padding: 15px;
-  color: var(--logo-color);
+  color: var(--main-color);
 }
 .landin-page .header .links {
   width: 100%;
@@ -111,7 +146,11 @@ body {
   padding-bottom: 5px;
   margin: auto;
   margin-bottom: 40px;
-  background-image: linear-gradient(90deg, var(--bg-color), var(--bg-color)),
+  background-image: linear-gradient(
+      90deg,
+      var(--links-color),
+      var(--links-color)
+    ),
     linear-gradient(90deg, var(--underline), var(--underline));
   background-size: var(--space) 0.3rem, 100% 0.3rem;
   background-repeat: no-repeat;
