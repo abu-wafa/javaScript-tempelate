@@ -2,11 +2,12 @@
   --main-color: #f72585;
   --links-color: #4cc9f0;
   /*under line*/
-  --bg-color: #4cc9f0;
   --underline: #b5179e;
   --space: 6rem;
 }
-
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -39,18 +40,30 @@ body {
   left: 0;
 }
 .setting-bar .setting-container {
-  padding: 40px;
+  padding: 20px;
 }
-.setting-bar .color-box h2 {
+
+.setting-bar .option-box {
+  text-align: center;
+  background: #eee;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  border-radius: 5px;
+}
+.setting-bar .option-box h4 {
   color: var(--underline);
   margin: 0;
   font-weight: bold;
 }
-.setting-bar .color-box ul {
+
+.setting-bar .option-box ul {
   list-style: none;
+  background-color: black;
   padding: 0;
+  border-radius: 15px;
+  box-shadow: 0px 7px 6px grey;
 }
-.setting-bar .color-box ul li {
+.setting-bar .option-box ul li {
   margin: 5px;
   border-radius: 50%;
   width: 20px;
@@ -60,18 +73,38 @@ body {
   display: inline-block;
   cursor: pointer;
 }
-.setting-bar .color-box ul li.active {
+.setting-bar .option-box ul li.active {
   opacity: 1;
 }
 
-.setting-bar .color-box ul :first-child {
+.setting-bar .option-box ul :first-child {
   background-color: #4cc9f0;
 }
-.setting-bar .color-box ul :nth-child(2) {
+.setting-bar .option-box ul :nth-child(2) {
   background-color: #f72585;
 }
-.setting-bar .color-box ul :nth-child(3) {
+.setting-bar .option-box ul :nth-child(3) {
   background-color: red;
+}
+.setting-bar .random-color {
+  margin-top: 15px;
+}
+
+.setting-bar .random-color span {
+  color: white;
+  background-color: #3f51b5;
+  padding: 4px;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.5;
+  width: 50px;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 3px;
+}
+.setting-bar .random-color span.active {
+  opacity: 1;
 }
 
 /* < setting bar */
@@ -134,7 +167,7 @@ body {
 .landin-page .intro-text {
   position: absolute;
   text-align: center;
-  width: 65%;
+  width: 100%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -142,7 +175,7 @@ body {
 }
 .landin-page .intro-text h1 {
   color: white;
-  width: 45%;
+  width: 27%;
   padding-bottom: 5px;
   margin: auto;
   margin-bottom: 40px;
