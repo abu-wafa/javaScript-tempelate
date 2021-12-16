@@ -528,5 +528,21 @@ body {
   margin: 0 auto;
   font-weight: bold;
 }
-
 /* < our features */
+/* > testimonials */
+.testimonials {
+  padding: 40px 0;
+  background-color: #ccc;
+  position: relative;
+}
+.testimonials::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--links-color);
+}
+
+/* < testimonials */
