@@ -1,9 +1,11 @@
 //selctors 
     //landing page
     let landingpage = document.querySelector(".landin-page")
+    let pagelinks = document.querySelectorAll(".landin-page .header .links a")
     //setting box 
     let colorLi = document.querySelectorAll(".setting-bar .option-box ul li")
     let randombgSP = document.querySelectorAll(".setting-bar .random-color span")
+    let BulletsOP = document.querySelectorAll(".setting-bar .bullets-option span")
     //our skills
     let skills = document.querySelector(".our-skills")
     let skillsSpn =  document.querySelectorAll(".skill-prograss span")
@@ -11,16 +13,18 @@
     let imgs = document.querySelectorAll(".our-images .images-box img")
     //nav bullets
     let bullets = document.querySelectorAll(".nav-bullets .bullets")
+    let nav_bullets = document.querySelector(".nav-bullets")
 
 // < selctors
-
 // glopal decleration
+let arr = [1,2,3,4,5,6,7,8]
 let option = true;
 let backgroundInterval;
 //local storage
 let mainColor = localStorage.getItem("color-options")
 let backgroundStatus = localStorage.getItem("bg-imgOp")
-
+let bulletsStatus = localStorage.getItem("bulletsOption")
+    
     // change the Page color  
     if(mainColor!==null){
         document.documentElement.style.setProperty('--links-color',mainColor)
@@ -47,34 +51,45 @@ let backgroundStatus = localStorage.getItem("bg-imgOp")
             }
         })   
     }
-// < local storage
+    // bullets status
+    if (bulletsStatus!==null) {
+        if (bulletsStatus=='Yes') {
+            nav_bullets.style.display= "block"
+        }else{
+            nav_bullets.style.display= "none"
+        }
+        BulletsOP.forEach(elm=>{
+            elm.classList.remove("active")
+            if(elm.dataset.bullets==bulletsStatus){
+                elm.classList.add("active")
+            }
+        })   
+    }
 
+// < local storage
 /* > setting box*/
 let toogle=()=>{
     document.getElementById("setting").classList.toggle("show")
     document.querySelector(".fa-cog").classList.toggle("fa-spin")
 }     
-/* > colors box */
+// > colors box 
 colorLi.forEach(li=>{
     li.addEventListener("click",function(e){
     //move active class to the clicked li and remove from the other 
-        colorLi.forEach(li=>li.classList.remove("active"))
-        this.classList.add("active")
+       MVactive(colorLi,e)
     // switch the page color 
         document.documentElement.style.setProperty('--links-color',e.target.dataset.color)
     // add to the local storage    
         localStorage.setItem("color-options",e.target.dataset.color)
-    
     })
 })
 
-
-/* > dynamic images */
+// > bg images options 
+randombackground()  
 randombgSP.forEach(Element=>{
     Element.addEventListener("click",function(e){
     //move active class to the clicked span and remove from the other 
-        randombgSP.forEach(elm=>elm.classList.remove("active"))
-        this.classList.add("active")
+       MVactive(randombgSP,e)
     // change the option btn for the clicked span
         if(e.target.dataset.background==='Yes'){
             option=true
@@ -88,23 +103,22 @@ randombgSP.forEach(Element=>{
         }
     })
 })
-/* > background looping */
-let arr = [1,2,3,4,5,6,7,8] // index of the img 
-let looping=()=>{ 
-    let random = Math.floor(Math.random()* arr.length); // random index selected
-    landingpage.style.backgroundImage =`url(./img/background/${arr[random]}.jpg)` // change the background-image to random img
-}
-/* > random background options */
-let randombackground = function(){
-    if (option==true){
-        backgroundInterval = setInterval(looping, 5000); // change img every 5s
-    } 
-    else{
-        clearInterval(backgroundInterval)
-    }
-}
-randombackground()  
+// bullets options
+BulletsOP.forEach(elm=>{
+    elm.addEventListener("click",(e)=>{
+        MVactive(BulletsOP,e)
+        if(e.target.dataset.bullets=="Yes"){
+            nav_bullets.style.display= "block"
+            localStorage.setItem("bulletsOption",e.target.dataset.bullets)
 
+        }else{
+            nav_bullets.style.display= "none"
+            localStorage.setItem("bulletsOption",e.target.dataset.bullets)        
+        }
+    })
+})
+
+/* < setting box*/ 
 // > skills section  
 window.onscroll=function(){
     // skills ofset top
@@ -171,15 +185,38 @@ imgs.forEach(elm=>{
     })
 })
 
-// > nav bullets
+// > nav bullets && links 
+scrollSec(bullets)
+scrollSec(pagelinks)
 
-bullets.forEach((elm)=>{
-    elm.addEventListener("click",function(){
+/// functions section
 
-        document.getElementById(`${elm.dataset.section}`).scrollIntoView({
-            behavior:"smooth"
+    // scroll to element  
+    function scrollSec(sec) {
+        sec.forEach((elm)=>{
+            elm.addEventListener("click",function(e){
+                e.preventDefault();
+                document.getElementById(`${e.target.dataset.section}`).scrollIntoView({
+                    behavior:"smooth"
+                })
+            })
         })
-
-    })
-})
-
+    }
+    // active class handler
+    function MVactive(elm ,e) {
+        elm.forEach(li=>li.classList.remove("active"))
+        e.target.classList.add("active")
+    }
+    // random background imgs
+    function looping(){ 
+        let random = Math.floor(Math.random()* arr.length); // random index selected
+        landingpage.style.backgroundImage =`url(./img/background/${arr[random]}.jpg)` // change the background-image to random img
+    }
+    function randombackground(){
+    if (option==true){
+        backgroundInterval = setInterval(looping, 5000); // change img every 5s
+    } 
+    else{
+        clearInterval(backgroundInterval)
+    }
+}
