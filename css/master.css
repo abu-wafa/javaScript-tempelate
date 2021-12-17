@@ -108,6 +108,20 @@ body {
 .setting-bar .option-box ul :nth-child(3) {
   background-color: red;
 }
+.setting-bar .reset {
+  width: 100%;
+  padding: 8px 0;
+  background-color: #e91529;
+  border: none;
+  border-radius: 5px;
+  color: #FFf;
+  font-weight: bold;
+  cursor: pointer
+}
+.setting-bar .reset:hover{
+  background-color: #b30919;
+  color:#EEE
+}
 
 /* < setting bar */
 /* > bullets */

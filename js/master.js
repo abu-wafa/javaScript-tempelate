@@ -117,6 +117,13 @@ BulletsOP.forEach(elm=>{
         }
     })
 })
+//reset option
+document.querySelector(".setting-bar .reset").onclick=()=>{
+    localStorage.removeItem("color-options")
+    localStorage.removeItem("bg-imgOp")
+    localStorage.removeItem("bulletsOption")
+    window.location.reload();
+}
 
 /* < setting box*/ 
 // > skills section  
