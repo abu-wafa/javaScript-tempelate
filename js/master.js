@@ -9,6 +9,8 @@
     let skillsSpn =  document.querySelectorAll(".skill-prograss span")
     // popup images
     let imgs = document.querySelectorAll(".our-images .images-box img")
+    //nav bullets
+    let bullets = document.querySelectorAll(".nav-bullets .bullets")
 
 // < selctors
 
@@ -45,8 +47,6 @@ let backgroundStatus = localStorage.getItem("bg-imgOp")
             }
         })   
     }
-
-
 // < local storage
 
 /* > setting box*/
@@ -126,8 +126,6 @@ window.onscroll=function(){
         })
     }
 }
-
-
 // popup images
 imgs.forEach(elm=>{
     elm.addEventListener("click",function(){
@@ -148,7 +146,6 @@ imgs.forEach(elm=>{
             //append to the popup
             popupBox.appendChild(imgAlt)   
         }
- 
         // create the image 
         let popupImg = document.createElement("img")
         popupImg.src = elm.src
@@ -169,6 +166,18 @@ imgs.forEach(elm=>{
                 e.target.parentNode.remove();
                 document.querySelector(".popup-overlay").remove();
             }
+        })
+
+    })
+})
+
+// > nav bullets
+
+bullets.forEach((elm)=>{
+    elm.addEventListener("click",function(){
+
+        document.getElementById(`${elm.dataset.section}`).scrollIntoView({
+            behavior:"smooth"
         })
 
     })

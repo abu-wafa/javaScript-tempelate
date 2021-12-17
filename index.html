@@ -40,28 +40,31 @@
     <!-- < setting bar  -->
     <!-- > nav bullets  -->
     <section class="nav-bullets">
-        <div class="bullets">
+        <div class="bullets" data-section="landing-page">
+            <div class="tooltip">Home</div>
+        </div>
+        <div class="bullets" data-section="about-us">
             <div class="tooltip">about us</div>
         </div>
-        <div class="bullets">
+        <div class="bullets" data-section="our-skills">
             <div class="tooltip">our skills</div>
         </div>
-        <div class="bullets">
+        <div class="bullets" data-section="gallary">
             <div class="tooltip">gallary</div>
         </div>
-        <div class="bullets">
+        <div class="bullets" data-section="timeline">
             <div class="tooltip">timeline</div>
         </div>
-        <div class="bullets">
+        <div class="bullets" data-section="features">
             <div class="tooltip">our features</div>
         </div>
-        <div class="bullets">
+        <div class="bullets" data-section="testimonials">
             <div class="tooltip">testimonials</div>
         </div>
     </section>
     <!-- < nav bullets  -->
     <!-- > landing page -->
-    <div class="landin-page">
+    <div class="landin-page" id="landing-page">
         <div class="overlay"></div>
         <div class="container">
             <div class="header">
@@ -84,22 +87,37 @@
     <!--  < landing page -->
     <!-- > About us -->
     <div class="container">
-        <section class="About-us">
-            <div class="info-box">
-                <h2>About us</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit natus iure saepe dolores
-                    repudiandae amet velit facere fugiat quis sed, ducimus a odit provident quidem mollitia. Enim
-                    perferendis beatae saepe.
-                </p>
+        <section class="About-us" id="about-us">
+            <h2>About Us</h2>
+            <div class="cont">
+                <div class="info-box">
+                    <h3>section 1</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit natus iure saepe dolores
+                        repudiandae amet velit facere fugiat quis sed, ducimus a odit provident quidem mollitia. Enim
+                        perferendis beatae saepe.
+                    </p>
+                </div>
+                <div class="images-box">
+                    <img src="./img/about-us.jpg" alt="about-us">
+                </div>
             </div>
-            <div class="images-box">
-                <img src="./img/about-us.jpg" alt="about-us">
+            <div class="cont">
+                <div class="info-box">
+                    <h3>section 2</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit natus iure saepe dolores
+                        repudiandae amet velit facere fugiat quis sed, ducimus a odit provident quidem mollitia. Enim
+                        perferendis beatae saepe.
+                    </p>
+                </div>
+                <div class="images-box">
+                    <img src="./img/about-us.jpg" alt="about-us">
+                </div>
             </div>
         </section>
     </div>
     <!-- < About us -->
     <!-- > our skills -->
-    <section class="our-skills">
+    <section class="our-skills" id="our-skills">
         <div class="container">
             <h2>Our Skills</h2>
             <div class="skills-box">
@@ -154,7 +172,7 @@
     </section>
     <!-- < our skills -->
     <!-- > gallary-->
-    <section class="our-images">
+    <section class="our-images" id="gallary">
         <div class="container">
             <h2>Our Gallary</h2>
             <div class="images-box">
@@ -171,7 +189,7 @@
     </section>
     <!-- < gallary -->
     <!-- > timline -->
-    <section class="timeline">
+    <section class="timeline" id="timeline">
         <div class="container">
             <h2 class="timeline-header">Our Timline</h2>
             <div class="timeline-content">
@@ -213,7 +231,7 @@
     </section>
     <!-- < timline -->
     <!-- > our features -->
-    <section class="our-features">
+    <section class="our-features" id="features">
         <div class="container">
             <h2>Our Features </h2>
             <div class="feat-container">
@@ -252,7 +270,7 @@
     </section>
     <!-- < our features -->
     <!-- > testimonials -->
-    <div class="testimonials">
+    <div class="testimonials" id="testimonials">
         <div class="container">
             <h2>Testimonials</h2>
             <div class="ts-box">
