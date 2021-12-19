@@ -193,10 +193,10 @@ imgs.forEach(elm=>{
 })
 
 // > nav bullets && links 
-scrollSec(bullets)
 scrollSec(pagelinks)
+scrollSec(bullets)
 
-/// functions section
+/// functions section 
 
     // scroll to element  
     function scrollSec(sec) {
