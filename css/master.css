@@ -234,14 +234,14 @@ body {
   display: none;
   position: relative;
 }
-.landin-page .header .toggle-lins::before {
+.landin-page .header .toggle-lins.toggle::before {
   content: "";
   position: absolute;
   border-width: 10px;
   border-style: solid;
   border-color: transparent transparent #fff transparent;
-  left: 8px;
-  bottom: -6px;
+  left: 10px;
+  bottom: -9px;
   width: 0;
   height: 0;
 }
@@ -288,6 +288,7 @@ body {
 .landin-page .intro-text p {
   color: white;
   line-height: 1.8;
+  max-width: 69%;
   font-size: 20px;
   margin: auto;
 }
