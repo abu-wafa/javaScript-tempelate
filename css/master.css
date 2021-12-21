@@ -9,7 +9,6 @@
   box-sizing: border-box;
 }
 .container {
-  /* width: 1170px; */
   padding: 0 15px;
   margin: auto;
 }
@@ -192,7 +191,7 @@ body {
 }
 .landin-page .header {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   padding: 15px 0;
 }
@@ -284,13 +283,23 @@ body {
 .landin-page .intro-text h1 span {
   color: var(--links-color);
 }
-
 .landin-page .intro-text p {
   color: white;
   line-height: 1.8;
   max-width: 69%;
   font-size: 20px;
   margin: auto;
+}
+@media (max-width:576px) {
+
+  .landin-page .intro-text h1 {
+    font-size: 20px;
+    width: 230px;
+  }
+
+  .landin-page .intro-text p {
+    font-size: 15px;
+  }
 }
 /* < landing */
 /* > About-us*/
@@ -307,6 +316,13 @@ body {
 .About-us .cont {
   display: flex;
   width: 100%;
+}
+@media(max-width:768px) {
+  .About-us .cont {
+    display: block;
+    text-align: center;
+  }
+
 }
 .About-us .info-box {
   flex: 1;
@@ -330,6 +346,11 @@ body {
   flex: 1;
   text-align: right;
 }
+@media (max-width:768px) {
+  .About-us .images-box{
+    display: none;
+  }
+}
 .About-us .images-box img {
   width: 300px;
 }
@@ -347,6 +368,12 @@ body {
   margin: 0 0 40px;
   text-align: center;
 }
+@media (max-width:576px) {
+  .our-skills h2 {
+    margin: 0 0 30px;
+    font-size: 25px 
+  }  
+}
 .our-skills .skills-box {
   display: flex;
   margin-bottom: 15px;
@@ -354,11 +381,28 @@ body {
   padding: 15px;
   border-radius: 30px;
 }
+@media (max-width:576px) {
+  .our-skills .skills-box {
+    display: block;
+    margin-bottom: 15px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 0;
+    }  
+}
 .our-skills .skills-box .skill-name {
   font-weight: bold;
   width: 140px;
   text-align: center;
   line-height: 30px;
+}
+@media (max-width:576px) {
+  .our-skills .skills-box .skill-name{
+    width: 100%;
+    text-transform: capitalize;
+    text-align: center;
+    
+  }
 }
 .our-skills .skills-box .skill-prograss {
   background-color: #80808026;
